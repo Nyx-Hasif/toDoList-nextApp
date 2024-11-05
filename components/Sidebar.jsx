@@ -1,5 +1,6 @@
 "use client";
 import { BiExpand, BiCollapse } from "react-icons/bi";
+import { FcTodoList } from "react-icons/fc";
 import Link from "next/link";
 import React, { useState } from "react";
 import { DiMongodb } from "react-icons/di";
@@ -21,6 +22,11 @@ const Sidebar = () => {
       name: "TodoList Steps",
       icon: <DiMongodb className={"text-2xl"} />,
       link: "/todolist",
+    },
+    {
+      name: "TodoList Apps",
+      icon: <FcTodoList className={"text-2xl"} />,
+      link: "/todolist_app",
     },
   ];
 
