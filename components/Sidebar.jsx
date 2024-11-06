@@ -4,14 +4,12 @@ import { FcTodoList } from "react-icons/fc";
 import Link from "next/link";
 import React, { useState } from "react";
 import { DiMongodb } from "react-icons/di";
+import { usePathname } from "next/navigation";
 
 const Sidebar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [active, setActive] = useState(0);
 
-  const handleClick = (newIndex) => {
-    setActive(newIndex);
-  };
+  const pathname = usePathname(); // usePathname adalah hook dari Next.js yang memberikan path URL semasa. Ia akan dikemaskini secara automatik apabila URL berubah.
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -52,10 +50,10 @@ const Sidebar = () => {
         {dataName.map((item, index) => {
           return (
             <Link href={item.link} key={index}>
+              {/* (URL semasa) dengan item.link. Jika ia sama, kita tambah kelas "bg-blue-300" untuk menunjukkan item itu aktif. */}
               <div
-                onClick={() => handleClick(index)}
                 className={`${
-                  active === index ? "bg-blue-300" : ""
+                  pathname === item.link ? "bg-blue-300" : ""
                 } hover:bg-blue-300 cursor-pointer py-3 flex justify-center items-center `}
               >
                 {isSidebarOpen ? item.name : item.icon}

@@ -20,7 +20,7 @@ export const GET = async () => {
 // Mengambil data dari permintaan untuk mencipta todo baru, menyimpannya ke dalam database, dan mengembalikan todo yang baru dicipta.
 export const POST = async (request) => {
     try {
-      const { title,completed } = await request.json(); // Ambil data dari permintaan (input field)
+      const { title,completed } = await request.json(); // Ambil data dari permintaan (input field)..destructure objek from client side
       await connectMongoDB(); // Sambungkan ke MongoDB
       const todo = new Todo({ title,completed }); // Buat todo baru
       const newTodo = await todo.save(); // Simpan todo ke dalam database
@@ -52,7 +52,7 @@ export const PUT = async (request) => {
 // Mengambil ID dari permintaan untuk menghapus todo, dan mengembalikan mesej kejayaan jika todo berjaya dihapus.
 export const DELETE = async (request) => {
     try {
-      const { _id } = await request.json(); // Ambil data dari permintaan .Backend menerima ID tersebut melalui request.json()
+      const  {_id}  = await request.json(); // Ambil data dari permintaan .Backend menerima ID tersebut melalui request.json()
       await connectMongoDB(); // Sambungkan ke MongoDB
       const deletedTodo = await Todo.findByIdAndDelete(_id); // Hapus todo berdasarkan ID
       if (!deletedTodo) {
