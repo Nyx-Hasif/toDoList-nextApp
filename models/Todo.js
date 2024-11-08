@@ -24,3 +24,5 @@ module.exports = Todo;
 
 
 //benda ini schema akan buat model dalam bentuk objek dan ia akan masuk ke dalam mongoDB
+
+// Contoh penggunaan:  mongoose.models.Todo =>> ia akan buat model dalam bentuk objek

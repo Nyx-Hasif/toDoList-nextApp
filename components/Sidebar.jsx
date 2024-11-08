@@ -17,9 +17,14 @@ const Sidebar = () => {
 
   const dataName = [
     {
-      name: "TodoList Steps",
+      name: "TodoList Steps MongoDB",
       icon: <DiMongodb className={"text-2xl"} />,
       link: "/todolist",
+    },
+    {
+      name: "TodoList Steps Mongoose",
+      icon: <DiMongodb className={"text-2xl"} />,
+      link: "/todolist_guide",
     },
     {
       name: "TodoList Apps",
