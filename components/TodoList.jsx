@@ -5,7 +5,11 @@ import React from 'react'
 const TodoList = () => {
   return (
    <div className='flex flex-col gap-6 py-4 px-4'>
+
         <h1 className="text-3xl font-extrabold text-shadow  text-red-500 ">4. TodoList Components</h1>
+        <p className="text-3xl font-extrabold text-shadow  text-blue-500 ">Endpoints</p>
+        <Image src={assets.endpoints} alt="models" />
+
         <p className="text-3xl font-extrabold text-shadow  text-blue-500 ">4.1 Client fetch data</p>
         <Image src={assets.client_get} alt="models" />
         <Image src={assets.get_form} alt="models" />
